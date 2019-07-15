@@ -129,7 +129,7 @@ ${conjoin`matches.cluster IN (${region})`}
 ${minDate ? conjoin`matches.start_time >= extract(epoch from timestamp '${new Date(minDate.value).toISOString()}')` : ''}
 ${maxDate ? conjoin`matches.start_time <= extract(epoch from timestamp '${new Date(maxDate.value).toISOString()}')` : ''}
 ${conjoin`leagues.tier = '${tier}'`}
-${isTi9Team ? 'AND teams.team_id IN (15, 36, 39, 2163, 111474, 350190, 543897, 726228, 1838315, 1883502, 2108395, 2586976, 2626685, 2672298, 6209804, 6214538, 6214973, 6666989)' : ''}
+${isTi9Team ? 'AND teams.team_id IN (15, 36, 39, 2163, 111474, 350190, 543897, 726228, 1838315, 1883502, 2108395, 2586976, 2626685, 2672298, 6209804, 6214538, 6214973, 7203342)' : ''}
 ${megaWin ? 'AND ((matches.barracks_status_radiant = 0 AND matches.radiant_win) OR (matches.barracks_status_dire = 0 AND NOT matches.radiant_win))' : ''}
 ${maxGoldAdvantage ? `AND @ matches.radiant_gold_adv[array_upper(matches.radiant_gold_adv, 1)] <= ${maxGoldAdvantage.value}` : ''}
 ${minGoldAdvantage ? `AND @ matches.radiant_gold_adv[array_upper(matches.radiant_gold_adv, 1)] >= ${minGoldAdvantage.value}` : ''}
